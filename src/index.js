@@ -28,6 +28,15 @@ function populateToys() {
         displayToy(toy);
       });
     });
+  // fetch('http://localhost:3000/toys')
+  //   .then((response) => {
+  //     return response.json();
+  //   })
+  //   .then((toys) => {
+  //     toys.forEach((toy) => {
+  //       displayToy(toy);
+  //     });
+  //   });
 }
 
 function displayToy(toy) {
@@ -108,4 +117,22 @@ function likeToy(likeButton) {
       })
     });
   });
+  // likeButton.addEventListener('click', (event) => {
+  //   const id = event.target.parentNode.dataset.id;
+  //   const likes = event.target.parentNode.querySelector('p');
+  //   const stringLikes = likes.innerText.split(' ')[0];
+  //   likes.innerText = `${parseInt(stringLikes) + 1} Likes`;
+
+  //   fetch(`http://localhost:3000/toys/${id}`, {
+  //     method: 'PATCH',
+  //     headers:
+  //     {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json"
+  //     },
+  //     body: JSON.stringify({
+  //       "likes": parseInt(stringLikes) + 1
+  //     })
+  //   });
+  // });
 }
