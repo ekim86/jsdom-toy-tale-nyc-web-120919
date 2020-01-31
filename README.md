@@ -23,6 +23,11 @@ When the page loads, make a 'GET' request to fetch all the toy objects. With the
 response data, make a `<div class="card">` for each toy and add it to the
 toy-collection `div`.
 
+// get all the data of toys (fetch)
+// get the div toy collection
+// create class card
+// and add it to the toy collection div
+
 ## Add Toy Info to the Card
 
 Each card should have the following child elements:
@@ -31,6 +36,11 @@ Each card should have the following child elements:
   * `img` tag with the `src` of the toy's image attribute and the class name "toy-avatar"
   * `p` tag with how many likes that toy has
   * `button` tag with a class "like-btn"
+
+// create h2 tag with toy.name
+// create image tag with src toy.image add class name toy-avatar
+// create p tag with likes
+// create button tag with class like-btn
 
 After all of that, the toy card should resemble:
 
@@ -63,6 +73,8 @@ body: JSON.stringify({
   "likes": 0
 })
 ```
+
+// 
 
 * For examples, refer to the [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Supplying_request_options).
 
