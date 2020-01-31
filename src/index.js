@@ -63,12 +63,17 @@ function toyInfo(div, toy) {
   const likeButton = document.createElement('button');
   likeButton.setAttribute('class', 'like-btn');
   likeButton.innerText = "Like <3";
+
+  const deleteButton = document.createElement('button');
+  deleteButton.innerText = "Delete";
   likeToy(likeButton);
+  deleteToy(deleteButton);
 
   div.appendChild(h2);
   div.appendChild(image);
   div.appendChild(p);
   div.appendChild(likeButton);
+  div.appendChild(deleteButton);
   div.dataset.id = toy.id;
   // div.innerHTML = `
   // <h2>${toy.name}</h2>
@@ -135,4 +140,19 @@ function likeToy(likeButton) {
   //     })
   //   });
   // });
+}
+
+function deleteToy(deleteButton) {
+  deleteButton.addEventListener('click', function (event) {
+    const id = event.target.parentNode.dataset.id;
+    event.target.parentNode.remove();
+    fetch(`http://localhost:3000/toys/${id}`, {
+      method: 'DELETE',
+      headers:
+      {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    });
+  });
 }
